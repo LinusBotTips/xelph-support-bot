@@ -1,16 +1,16 @@
-const { Client, Collection } = require("discord.js");
+require("dotenv").config()
 
-const client = new Client({
+const Discord = require("discord.js");
+
+const client = new Discord.Client({
     intents: 32767,
 });
 module.exports = client;
 
-// Global Variables
-client.commands = new Collection();
-client.slashCommands = new Collection();
+client.commands = new Discord.Collection();
+client.slashCommands = new Discord.Collection();
 client.config = require("./config.json");
 
-// Initializing the project
 require("./handler")(client);
 
-client.login(client.config.token);
+client.login(process.env.TOKEN);

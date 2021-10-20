@@ -2,7 +2,7 @@ const { glob } = require("glob");
 const { promisify } = require("util");
 const { Client } = require("discord.js");
 const mongoose = require("mongoose");
-
+const chalk = require("chalk")
 const globPromise = promisify(glob);
 
 /**
@@ -19,6 +19,8 @@ module.exports = async (client) => {
         if (file.name) {
             const properties = { directory, ...file };
             client.commands.set(file.name, properties);
+            console.log(chalk.green(file.name + " Command Loaded!"))
+
         }
     });
 
@@ -30,12 +32,13 @@ module.exports = async (client) => {
     const slashCommands = await globPromise(
         `${process.cwd()}/SlashCommands/*/*.js`
     );
-
+    console.log(" ")
     const arrayOfSlashCommands = [];
     slashCommands.map((value) => {
         const file = require(value);
         if (!file?.name) return;
         client.slashCommands.set(file.name, file);
+        console.log(chalk.green(file.name + " Command Loaded!"))
 
         if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
         arrayOfSlashCommands.push(file);

@@ -4,7 +4,7 @@ module.exports = {
   name: "repository",
   description: "Sends the GitHub repository",
 
-  run: async(client, interaction, args) =>{
+  run: async(client, interaction) =>{
 
     let images = [
       "https://media.discordapp.net/attachments/781838623510888450/899923617758998538/Tue-19-Oct-2021-183456-AEDT.png?width=1422&height=400",

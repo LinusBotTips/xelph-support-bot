@@ -20,5 +20,5 @@ client.on("ready", () =>{
                     .setFooter(`👍 ${content[0].data.children[0].data.ups} 👎 ${content[0].data.children[0].data.downs} | Comments : ${content[0].data.children[0].data.num_comments}`)
             channel.send({embeds:[embed]})
         })
-    }, 50000)
+    }, 1800000)
 });

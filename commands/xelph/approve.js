@@ -11,10 +11,10 @@ module.exports = {
        if(!id) return message.reply("provide a message id")
        const comment = args.slice(1).join(" ")
        if(!comment) return message.reply("provide a comment")
-        message.reply({content: "sent")}
+        message.reply("Sent!")
        chan.messages.fetch(id)
        .then(msg => {
-       msg.reply(`Your suggestion has been approved! Comment from dev ${comment}`)
+       msg.reply(`Your suggestion has been approved! Comment from developer\n ${comment}`)
        })
    }
 }

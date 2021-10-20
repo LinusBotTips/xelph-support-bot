@@ -21,8 +21,6 @@ process.on('unhandledRejection', async (err) => {
         .setColor("RED")
 
     console.log(chalk.red(`[Error!] ${err.stack}`))
-    client.channels.cache.get("900297584730591242").send({
-        embeds:[embed]
-    })
+    client.channels.cache.get("900297584730591242").send({embeds:[embed]})
 })
 client.login(process.env.TOKEN);

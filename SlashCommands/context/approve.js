@@ -24,7 +24,10 @@ module.exports = {
             embeds:[embed],
             content: `Hey! ${msg.author} your suggestion got accepted!`
         })
-        interaction.followUp({content: "Accepted!"})
+        interaction.followUp({content: "Accepted!"}).then(msg => {
+            setTimeout(() => msg.delete(), 10000)
+          })
+        msg.delte()
         //interaction.followUp({ content: `${msg.author} Your suggestion \`${msg.content}\` was approved!`, ephemeral: false  });
     },
 };

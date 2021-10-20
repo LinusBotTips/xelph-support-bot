@@ -13,7 +13,6 @@ module.exports = {
        if(!comment) return message.reply("provide a comment")
        chan.messages.fetch(id)
        .then(msg => {
-           if(msg) return
        msg.reply(`Your suggestion has been approved! Comment from dev ${comment}`)
        })
    }

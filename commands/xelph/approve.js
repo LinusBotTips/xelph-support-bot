@@ -14,7 +14,10 @@ module.exports = {
         message.reply("Sent!")
        chan.messages.fetch(id)
        .then(msg => {
-       msg.reply(`Your suggestion has been approved! Comment from developer:\n${comment}`)
-       })
+           if(msg.channel.id === "900154899139006516") {
+            msg.reply(`Your suggestion has been approved! Comment from developer:\n${comment}`)
+
+           }
+        })
    }
 }

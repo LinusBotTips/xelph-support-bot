@@ -8,7 +8,9 @@ client.on("guildMemberAdd", async member =>{
     .setColor("#2a9bc9")
     .setTimestamp()
     .setFooter(member.user.username, member.user.avatarURL({dynamic:true}))
-
+    
+    const role = member.guild.roles.cache.get("900267928769941524")
+    member.roles.add(role)
     const channel = client.channels.cache.get("900161455087841322")
     channel.send({
         embeds:[welcomeembed]

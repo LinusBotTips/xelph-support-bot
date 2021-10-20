@@ -14,7 +14,7 @@ module.exports = {
         message.reply("Sent!")
        chan.messages.fetch(id)
        .then(msg => {
-       msg.reply(`Your suggestion has been approved! Comment from developer\n ${comment}`)
+       msg.reply(`Your suggestion has been approved! Comment from developer:\n${comment}`)
        })
    }
 }

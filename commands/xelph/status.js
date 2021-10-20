@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
   name: 'status',
   description: 'change le bot status',
-  run: async(client, interaction, args) => {
+  run: async(client, message, args) => {
     if (!client.config.ownerid.includes(message.author.id)) return
     if (!args[0]) return message.reply({
         content: "Parameters: `activityType` `statusText`"

@@ -17,7 +17,7 @@ client.on("ready", () =>{
         axios.get(url).then((res) => { 
             statschanel.setName(`${res.data.tag_name}: ${res.data.assets[0].download_count} downloads!`)
         })
-    }, 1800000)
+    }, 900000)
     setInterval(() => {
         got('https://www.reddit.com/r/unixporn/random/.json').then(res => {
             let content = JSON.parse(res.body)

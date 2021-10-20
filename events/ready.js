@@ -11,7 +11,7 @@ client.on("ready", () =>{
     const channel = client.channels.cache.get("900264447497633812");
 
     setInterval(() => {
-        got('https://www.reddit.com/r/unixporn/hot/.json').then(res => {
+        got('https://www.reddit.com/r/unixporn/random/.json').then(res => {
             let content = JSON.parse(res.body)
             const embed = new Discord.MessageEmbed()
                     .setTitle(content[0].data.children[0].data.title)

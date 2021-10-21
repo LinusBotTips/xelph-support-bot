@@ -8,7 +8,7 @@ module.exports = {
     axios.get(url).then((res) => { 
         const embed = new Discord.MessageEmbed()
         .setAuthor("Stats for the latest Xelph release!")
-        .addField("Release:", `${res.data.name} downloads`)
+        .addField("Release:", `${res.data.name}`)
         .addField("Downloads:", `${res.data.assets[0].download_count} downloads`)
         .setColor("BLUE")
 

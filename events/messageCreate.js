@@ -1,11 +1,22 @@
 const client = require("../index");
 
+
+
 client.on("messageCreate", async (message) => {
     if(message.channel.id === "900154899139006516"){
         if(message.author.bot) return
         if(message.author.id === "633967275090771971") return
         message.react("👍")
         message.react("👎")
+    }
+    if(message.channel.id === "900153282213855272"){
+
+        for(var i = 0; i < message.embeds.length; i++) {
+            if(message.embeds[i].title.includes("star") || message.embeds[i].title.includes("cyber")) {
+                message.react("❤️")
+
+            }
+    }
     }
     if(message.content.toLowerCase().startsWith("i need help")){
         message.reply("Please provide more information about your issue.")

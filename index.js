@@ -21,7 +21,7 @@ process.on('unhandledRejection', async (err) => {
 
     console.log(`[Error!] ${err.stack}`)
 
-    client.channels.cache.get("900297584730591242").send({
+    client.channels.cache.get("900847304913874954").send({
         embeds:[errEmbed]
     })
 })

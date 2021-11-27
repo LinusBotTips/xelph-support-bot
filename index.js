@@ -13,6 +13,7 @@ client.config = require("./config.json");
 
 require("./handler")(client);
 
+
 process.on('unhandledRejection', async (err) => {
     const errEmbed = new Discord.MessageEmbed().setTitle('Error!')
         .setDescription("```" + err.stack + "```")
@@ -21,8 +22,6 @@ process.on('unhandledRejection', async (err) => {
 
     console.log(`[Error!] ${err.stack}`)
 
-    client.channels.cache.get("900847304913874954").send({
-        embeds:[errEmbed]
-    })
+    client.channels.cache.get("900847304913874954").send({embeds:[errEmbed]})
 })
 client.login(process.env.TOKEN);

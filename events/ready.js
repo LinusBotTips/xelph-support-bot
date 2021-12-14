@@ -1,11 +1,20 @@
 const client = require("../index");
 const chalk = require("chalk")
+const axios = require("axios")
 const Discord = require("discord.js")
 const { joinVoiceChannel, createAudioPlayer, createAudioResource } = require("@discordjs/voice");
 
-const Channels = ["900295611239235594"];
+const Channels = ["914074954566336532"];
 
 client.on("ready", async () => {
+    const statschanel = client.channels.cache.get("900295611239235594")
+    setInterval(() => {
+        let url = `https://xelph.aakashpoopeater.ga`;
+        axios.get(url).then((res) => { 
+            statschanel.setName(`Total: ${res.data} downloads!`)
+        })
+    }, 900000)
+
     console.log(chalk.green(`${client.user.tag} is ready`))
     client.user.setActivity({
         name: "Xelph Linux",
